@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@source "./src/partials*.{html,js,php}";
+@source "./src/*.{html,js,php}";
+
+
+@plugin "daisyui"{
+    /* biome-ignore lint/correctness/noUnknownProperty: customization */
+    themes: light --default, dark --prefersdark, coffee, night, retro, lemonade,cyberpunk, cupcake,wireframe, business, fantasy, winter, autumn, garden, forest, corporate, synthwave, black, luxury, dracula,silk;
+  }
+
+@plugin "@iconify/tailwind4";
