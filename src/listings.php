@@ -2,6 +2,7 @@
 require 'config.php';
 session_start();
 
+
 $categories = $pdo->query("SELECT id, name FROM categories ORDER BY name")->fetchAll(PDO::FETCH_ASSOC);
 
 $category = isset($_GET['category']) ? (int)$_GET['category'] : null;
@@ -109,27 +110,7 @@ $listings = $statement->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </div>
     </div>
-
-    <?php
-    $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
-    ?>
-    <a href="/cart.php"
-        class="fixed bottom-6 right-6 z-50">
-        <span class="relative">
-            <button class="btn btn-circle btn-xl btn-dash bg-accent text-white hover:bg-accent-focus">
-                <span class="icon-[material-symbols--shopping-cart] text-3xl"></span>
-            </button>
-            <?php if ($cart_count > 0): ?>
-                <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2 py-0.5"
-                    id="cart-badge"
-                    style="<?= $cart_count > 0 ? '' : 'display:none;' ?>">
-                    <?= $cart_count ?>
-                </span>
-            <?php endif; ?>
-        </span>
-    </a>
-
-
+    <?php include __DIR__ . '/components/cartfab.php'; ?>
     <dialog id="listing-modal" class="modal modal-bottom sm:modal-middle">
         <div class="modal-box" id="listing-modal-content">
         </div>
