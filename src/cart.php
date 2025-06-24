@@ -156,10 +156,12 @@ if (!empty($cart)) {
                 </form>
             </div>
             <form action="checkout.php" method="POST" class="fixed bottom-4 right-4 z-50">
-                <button id="checkout-btn" type="submit" class="btn btn-circle bg-success text-white hover:bg-success-focus shadow-lg" disabled>
-                    <span class="icon-[material-symbols--credit-card-outline] text-3xl"></span>
-                    <span class="sr-only">Checkout</span>
-                </button>
+                <span class="relative">
+                    <button id="checkout-btn" type="submit" class="btn btn-circle  btn-xl bg-success text-white hover:bg-success-focus shadow-lg" disabled>
+                        <span class="icon-[material-symbols--credit-card-outline] text-3xl"></span>
+                        <span class="sr-only">Checkout</span>
+                    </button>
+                </span>
             </form>
             <script>
                 function validateCheckout() {
