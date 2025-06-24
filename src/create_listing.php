@@ -66,11 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="en" data-theme="silk">
 
-<head>
-    <title>Mzansi Listings</title>
-    <link href="/css/style.css" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>" />
-</head>
+<?php include __DIR__ . '/components/head.php'; ?>
 
 <body>
     <?php
